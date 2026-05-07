@@ -1,0 +1,116 @@
+/* 1. General page styling */
+body {
+    background-color: #222; /* Room is dark initially */
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* 2. Room background when the light is ON */
+body.light-on {
+    background-color: #fdfbd3; /* Warm room light */
+}
+
+.room {
+    display: flex;
+    flex-direction: column; /* This keeps everything in a straight line under each other */
+    align-items: center;
+    position: relative;
+}
+
+/* 3. Lamp Shade Styling (The Trapezoid shape) */
+.lamp-shade {
+    width: 140px; /* Bottom width */
+    height: 90px;
+    background-color: #3498db; /* Elegant blue color */
+    /* Create the lamp shade shape: smaller top, wider bottom */
+    border-radius: 50px 50px 10px 10px; 
+    position: relative;
+    transition: 0.3s ease;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+/* 4. The small bulb visible from under the shade */
+.bulb-inside {
+    width: 35px;
+    height: 35px;
+    background-color: #555;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -10px; /* Peeks out from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+    z-index: -1; /* Behind the shade */
+}
+
+/* 5. Styling when the Lamp is ON */
+.lamp-shade.on {
+    background-color: #5dade2; /* Lighter blue when lit */
+    box-shadow: 0 10px 60px rgba(255, 219, 88, 0.4);
+}
+
+.lamp-shade.on .bulb-inside {
+    background-color: #ffdb58; /* Yellow glowing bulb */
+    box-shadow: 0 0 30px #ffdb58;
+}
+
+/* 6. Pull chain container styling */
+.pull-chain-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -5px; /* Keeps the chain attached to the lamp shade */
+    z-index: 1;
+      position: absolute; /* يخليه حر الحركة فوق العمود */
+    top: 90px; /* يظبط مكانه يبدأ من جوه الأباجورة */
+    z-index: 2;
+}
+
+/* 7. The wire stretching effect */
+.wire {
+    width: 2px;
+    height: 100px;
+    background: #888;
+    transition: height 0.1s ease-in-out;
+}
+
+/* 8. The handle at the end of the wire */
+.handle {
+    width: 15px;
+    height: 25px;
+    background: #555;
+    border-radius: 5px;
+}
+
+/* 9. Interactions: When Pulling */
+.pull-chain-container.pulling .wire {
+    height: 140px; /* The wire stretches down */
+}
+
+.pull-chain-container.pulling {
+    transform: none; /* Keeps the top fixed to the lamp */
+}
+.lamp-stand {
+    width: 8px;
+    height: 150px;
+    background: linear-gradient(to right, #7f8c8d, #bdc3c7);
+    margin-top: -10px;
+    z-index: -1;
+}
+
+
+.lamp-base {
+    width: 100px;
+    height: 20px;
+    background: #34495e;
+    border-radius: 10px 10px 0 0; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
