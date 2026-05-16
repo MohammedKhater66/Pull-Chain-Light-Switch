@@ -3,7 +3,8 @@
 const lampShade = document.getElementById('lamp-shade');
 const body = document.body;
 const chainContainer = document.getElementById('chain-container');
-
+const lightOnText = document.querySelector(".On");
+const lightOffText = document.querySelector(".Off");
 // 2. Initialize the click sound effect
 // Ensure you have a file named 'click.mp3' in your project folder
 const clickSound = new Audio('click.wav'); 
@@ -26,4 +27,6 @@ chainContainer.addEventListener('mouseup', () => {
     // Toggle the lamp shade light and the room background
     lampShade.classList.toggle('on');
     body.classList.toggle('light-on');
+    lightOnText.style.display = lampShade.classList.contains("on") ? "block" : "none "
+    lightOffText.style.display = lampShade.classList.contains("on") ? "none" : "block"
 });
