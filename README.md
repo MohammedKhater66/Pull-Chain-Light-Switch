@@ -26,4 +26,4 @@ Click and hold the handle at the end of the wire to pull it down.
 
 Release the handle to toggle the lamp ON/OFF.
 --------------------------------------------------------------------------------------------
-PROJECT LINK : https://mohammedkhater66.github.io/Pull-Chain-Light-Switch/
+
